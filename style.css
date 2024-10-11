@@ -1,0 +1,540 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --arrow-bg: rgba(255, 255, 255, 0.3);
+  --arrow-icon: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg);
+  --option-bg: white;
+  --select-bg: rgba(255, 255, 255, 0.2);
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background: url("background.jpg");
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+}
+
+.main {
+  box-shadow: 0px 0px 10px rgb(255, 255, 255);
+  width: 99%;
+  /* height: 500px; */
+  backdrop-filter: blur(10px);
+  /* text-align: center; */
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  /* flex-direction: column; */
+}
+
+.part1 {
+  width: 50%;
+  height: 500px;
+  /* border: 1px solid white; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.part2 {
+  width: 50%;
+  height: 500px;
+  /* border: 1px solid white; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: black;
+  /* overflow: scroll; */
+}
+.heading {
+  width: 100%;
+  height: 80px;
+  /* border: 2px solid white; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.heading h1 {
+  color: #155eee;
+  text-align: center;
+  margin: 10px;
+  text-shadow: 0px 0px 2px rgba(255, 255, 255, 0.5);
+  letter-spacing: 1.5px;
+  font-size: 38px;
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  background-color: transparent;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.partsname {
+  width: 60%;
+  margin-top: 10px;
+}
+
+.partsname h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+#part-options {
+  /* Reset */
+  appearance: none;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  /* Personalize */
+  width: 20rem;
+  padding: 1rem 4rem 1rem 1rem;
+  background: var(--arrow-icon) no-repeat right 0.8em center / 1.4em,
+    linear-gradient(to left, var(--arrow-bg) 3em, var(--select-bg) 3em);
+  color: white;
+  border-radius: 0.25em;
+  box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  /* Remove IE arrow */
+  /* Remove focus outline */
+  &:focus {
+    outline: none;
+  }
+
+  /* <option> colors */
+  option {
+    color: white;
+    background-color: #333c3d;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+#details-box {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+#meterial-name {
+  appearance: none;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.462);
+  color: rgb(255, 255, 255);
+  border-radius: 0.25em;
+  box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+  padding: 4px 8px;
+  cursor: pointer;
+  font-weight: 700;
+  text-align: center;
+  /* Remove IE arrow */
+  /* Remove focus outline */
+  &:focus {
+    outline: none;
+  }
+
+  /* <option> colors */
+  option {
+    color: white;
+    background-color: #333c3d;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.meterial {
+  width: fit-content;
+  /* margin-top: 10px; */
+  display: flex;
+  /*align-items: center;
+ */
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  text-align: center;
+  box-shadow: 0px 0px 5px white;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+}
+
+.SHEET-THICKNESS {
+  width: 250px;
+  text-align: center;
+  box-shadow: 0px 0px 5px white;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+}
+
+#THICKNESS {
+  border: none;
+  outline: none;
+  box-shadow: 0px 0px 3px rgb(255, 255, 255);
+  background-color: transparent;
+  padding: 8px 2px;
+  text-align: center;
+  color: white;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  margin-top: 7px;
+  font-size: 14px;
+}
+
+.SHEET-SIZE {
+  width: fit-content;
+  text-align: center;
+  box-shadow: 0px 0px 5px white;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+}
+
+#sheetsize {
+  background-color: black;
+  width: 100%;
+  padding: 12px 6px;
+  border: 1px solid white;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+.SHEET-WEIGHT {
+  width: fit-content;
+  text-align: center;
+  box-shadow: 0px 0px 5px white;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+}
+
+#sheetweight {
+  background-color: black;
+  width: 100%;
+  padding: 12px 6px;
+  border: 1px solid white;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+.STRIP-SIZE {
+  width: 250px;
+  /* width: fit-content; */
+  text-align: center;
+  box-shadow: 0px 0px 5px white;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+}
+
+#stripsize {
+  border: none;
+  outline: none;
+  box-shadow: 0px 0px 3px rgb(255, 255, 255);
+  background-color: transparent;
+  padding: 8px 2px;
+  color: white;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  margin-top: 7px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.STREEP-WEIGHT {
+  width: fit-content;
+  text-align: center;
+  box-shadow: 0px 0px 5px white;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+}
+
+#streepweight {
+  background-color: black;
+  width: 100%;
+  padding: 12px 6px;
+  border: 1px solid white;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+.STRIP-SHEET {
+  width: fit-content;
+  text-align: center;
+  box-shadow: 0px 0px 5px white;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+}
+
+#stripsheet {
+  background-color: black;
+  width: 100%;
+  padding: 12px 6px;
+  border: 1px solid white;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+.BLANK-STEEP {
+  width: fit-content;
+  text-align: center;
+  box-shadow: 0px 0px 5px white;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+}
+
+#blanksteep {
+  background-color: black;
+  width: 100%;
+  padding: 12px 6px;
+  border: 1px solid white;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+.TOTAL-BLANK {
+  width: fit-content;
+  text-align: center;
+  box-shadow: 0px 0px 5px white;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+}
+
+#totalblank {
+  background-color: black;
+  width: 100%;
+  padding: 12px 6px;
+  border: 1px solid white;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+table {
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+  font-size: 10px;
+}
+th,
+td {
+  border: 1px solid #ffffff;
+  padding: 2px;
+  text-align: center;
+}
+th {
+  background-color: transparent;
+}
+
+.tableheading {
+  font-weight: 900;
+  backdrop-filter: blur(10px);
+  width: 100%;
+  background-color: rgb(255, 25, 0);
+  text-align: center;
+  font-size: 20px;
+}
+
+.tableheading2 {
+  background-color: rgb(255, 255, 0);
+  color: black;
+  font-weight: bolder;
+}
+
+.tableheading2 td,
+th {
+  border: 2px solid rgb(0, 0, 0);
+}
+
+#heightBlank {
+  width: 30px;
+  background-color: transparent;
+  color: white;
+  border: none;
+  outline: none;
+  border: 1px solid white;
+  padding: 1px 2px;
+  text-align: center;
+}
+
+#rateperKg,
+#netweight,
+#scrapRateperkg,
+#shearingPerkgRate,
+#tonageBlankingandPunching,
+#rateBlankingandPunching,
+#tonageBending,
+#rateBending,
+#rateRejection,
+#rateInvantry,
+#rateIccgrossrm,
+#rateDiemaintenance,
+#rateOverheadProcess,
+#tonagePackinginGunnybag,
+#ratepackinginGunnybag,
+#rateForwarding,
+#amtGauging,
+#amtFinalinspaction,
+#amtInspaction,
+#bopHandlingAmt,
+#rateProfit {
+  text-align: center;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  border: none;
+  font-size: 12px;
+  width: 30px;
+}
+
+@media (max-width: 1200px) {
+  .main {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    margin-top: 300px;
+  }
+  .part1 {
+    width: 100%;
+    height: fit-content;
+  }
+
+  .part2 {
+    width: 100%;
+    height: fit-content;
+  }
+}

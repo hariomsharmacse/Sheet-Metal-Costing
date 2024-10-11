@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sheet Metal Costing</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="heading">
+      <div class="logo">
+        <img src="logo.jpg" alt="logo" />
+      </div>
+      <h1>Sheet Metal Costing</h1>
+    </div>
+    <div class="main">
+      <div class="part1">
+        <div class="partsname">
+          <h2>Select Parts Name</h2>
+          <select name="partsname" id="part-options">
+            <option value="GUSSET LH/RH">GUSSET LH/RH</option>
+            <option value="SUSPENSION BKT ASSY">SUSPENSION BKT ASSY</option>
+            <option value="SUPPORT REAR PLATE">SUPPORT REAR PLATE</option>
+            <option value="CHAIN SLIDER BKT">CHAIN SLIDER BKT</option>
+            <option value="CHAIN COVER RR MTG">CHAIN COVER RR MTG</option>
+            <option value="CHAIN COVER MID MTG">CHAIN COVER MID MTG</option>
+            <option value="CHAIN COVER FR MTG">CHAIN COVER FR MTG</option>
+            <option value="CHAIN ADJUSTER BKT">CHAIN ADJUSTER BKT</option>
+            <option value="CHAIN ADJUSTER PLATE">CHAIN ADJUSTER PLATE</option>
+            <option value="MOUNTING BRACKET">MOUNTING BRACKET</option>
+            <option value="GUSSET">GUSSET</option>
+            <option value="STOPPER PLATE">STOPPER PLATE</option>
+            <option value="TAIL LIGHT MTG BKT">TAIL LIGHT MTG BKT</option>
+            <option value="TAIL LIGHT BTM MTG L">TAIL LIGHT BTM MTG L</option>
+            <option value="TAIL LIGHT BTM MTG R">TAIL LIGHT BTM MTG R</option>
+            <option value="TAIL LIGHT GUIDE BKT">TAIL LIGHT GUIDE BKT</option>
+            <option value="VISOR STAY ASSY">VISOR STAY ASSY</option>
+            <option value="INDICATOR BRACKET">INDICATOR BRACKET</option>
+            <option value="MAIN STAND GUSSET">MAIN STAND GUSSET</option>
+            <option value="STAND BASE PLATE LH">STAND BASE PLATE LH</option>
+            <option value="STAND BASE PLATE RH">STAND BASE PLATE RH</option>
+          </select>
+        </div>
+        <div id="details-box">
+          <div class="meterial">
+            Material Name
+            <select name="meterial-name" id="meterial-name">
+              <option value="H.R.P.">H.R.P.</option>
+              <option value="CR">CR</option>
+              <option value="H.R.">H.R.</option>
+            </select>
+          </div>
+          <div class="SHEET-THICKNESS">
+            SHEET THICKNESS IN MM
+            <input
+              type="text"
+              name="SHEET-THICKNESS"
+              id="THICKNESS"
+              placeholder="Enter Thickness in MM"
+            />
+          </div>
+          <div class="SHEET-SIZE">
+            SHEET SIZE
+            <div id="sheetsize">1250X2500X2.6MM<br />= 8125000</div>
+          </div>
+          <div class="SHEET-WEIGHT">
+            SHEET WEIGHT
+            <div id="sheetweight">63.781</div>
+          </div>
+          <div class="STRIP-SIZE">
+            STRIP SIZE
+            <input type="text" id="stripsize" placeholder="Enter Strip Size" />
+          </div>
+          <div class="STREEP-WEIGHT">
+            STREEP WEIGHT
+            <div id="streepweight">0</div>
+          </div>
+          <div class="STRIP-SHEET">
+            STRIP IN 01 SHEET
+            <div id="stripsheet">2500/95 <br />= 0</div>
+          </div>
+          <div class="BLANK-STEEP">
+            BLANK IN 01 STEEP
+            <div id="blanksteep">
+              1250/ <input type="text" id="heightBlank" /> <br />= 0
+            </div>
+          </div>
+          <div class="TOTAL-BLANK">
+            TOTAL BLANK IN 01 SHEET
+            <div id="totalblank">26X18 <br />= 0</div>
+          </div>
+        </div>
+      </div>
+      <div class="part2">
+        <table>
+          <div class="tableheading">MATERIAL COST</div>
+
+          <thead>
+            <tr class="tableheading2">
+              <th></th>
+              <th></th>
+              <th>WEIGHT IN K.G.</th>
+              <th>RATE PER KG</th>
+              <th>AMT.</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>GROSS WEIGHT</td>
+              <td></td>
+              <td id="grossWeight">0</td>
+              <td><input type="text" id="rateperKg" /></td>
+              <td id="amtofGrossweight">0</td>
+            </tr>
+            <tr>
+              <td>NET WIGHT</td>
+              <td></td>
+              <td><input type="text" id="netweight" /></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>SCRAP</td>
+              <td></td>
+              <td id="scrapWeightinKgVal">0</td>
+              <td><input type="text" id="scrapRateperkg" /></td>
+              <td id="totalAmtofScrap">0</td>
+            </tr>
+            <tr>
+              <td>MATERIAL COST</td>
+              <td colspan="3"></td>
+              <td id="materialCostFinal">0</td>
+            </tr>
+            <tr class="tableheading2">
+              <td>PROCESSING</td>
+              <td>TONAGE @75%</td>
+              <td colspan="2">RATE&#40;RS.&#47; STROKE&#47;TONAGE &#41;</td>
+              <td>AMT.</td>
+            </tr>
+            <tr>
+              <td>SHEARING @&#47;-Rs. Per kg</td>
+              <td></td>
+              <td colspan="2"><input type="text" id="shearingPerkgRate" /></td>
+              <td id="shearingAmt"></td>
+            </tr>
+            <tr>
+              <td>BLANKING & PUNCHING COMPOUND &#40;TON&#41;</td>
+              <td><input type="text" id="tonageBlankingandPunching" /></td>
+              <td colspan="2">
+                <input type="text" id="rateBlankingandPunching" />
+              </td>
+              <td id="amtBlankingandPunching">0</td>
+            </tr>
+            <tr>
+              <td>BENDING &#40; TON&#41;</td>
+              <td><input type="text" id="tonageBending" /></td>
+              <td colspan="2"><input type="text" id="rateBending" /></td>
+              <td id="amtBendindTon">0</td>
+            </tr>
+            <tr>
+              <td>TOTAL PROCESSING COST</td>
+              <td></td>
+              <td colspan="2"></td>
+              <td id="amtTotalprocessingcost">0</td>
+            </tr>
+            <!-- <tr>
+              <td>TOTAL COST OF RM+PROCESSING</td>
+              <td></td>
+              <td colspan="2"></td>
+              <td>8.20</td>
+            </tr> -->
+            <tr>
+              <td>REJECTION</td>
+              <td></td>
+              <td colspan="2"><input type="text" id="rateRejection" /></td>
+              <td id="amtRejection">0</td>
+            </tr>
+            <tr>
+              <td>INVANTRY</td>
+              <td></td>
+              <td colspan="2"><input type="text" id="rateInvantry" /></td>
+              <td id="amtInvantry">0</td>
+            </tr>
+            <tr>
+              <td>GAUGING</td>
+              <td></td>
+              <td colspan="2"></td>
+              <td><input type="text" id="amtGauging" /></td>
+            </tr>
+            <tr>
+              <td>FINAL INSPACTION</td>
+              <td></td>
+              <td colspan="2"></td>
+              <td><input type="text" id="amtFinalinspaction" /></td>
+            </tr>
+            <tr>
+              <td>INSPACTION</td>
+              <td></td>
+              <td colspan="2"></td>
+              <td><input type="text" id="amtInspaction" /></td>
+            </tr>
+            <tr>
+              <td>ICC GROSS RM</td>
+              <td></td>
+              <td colspan="2"><input type="text" id="rateIccgrossrm" /></td>
+              <td id="amtIccgross">0</td>
+            </tr>
+            <tr></tr>
+            <tr>
+              <td>BOP HANDLING</td>
+              <td></td>
+              <td colspan="2"></td>
+              <td><input type="text" id="bopHandlingAmt" /></td>
+            </tr>
+            <tr>
+              <td>DIE MAINTENANCE</td>
+              <td></td>
+              <td colspan="2"><input type="text" id="rateDiemaintenance" /></td>
+              <td id="amtDiemaintence">0</td>
+            </tr>
+            <tr>
+              <td>OVER-HEAD PROCESS</td>
+              <td></td>
+              <td colspan="2">
+                <input type="text" id="rateOverheadProcess" />
+              </td>
+              <td id="amtOverheadProcess">0</td>
+            </tr>
+            <tr>
+              <td>PACKING IN GUNNY BAG PER PEES</td>
+              <td><input type="text" id="tonagePackinginGunnybag" /></td>
+              <td colspan="2">
+                <input type="text" id="ratepackinginGunnybag" />
+              </td>
+              <td id="amtpackinginGunnybag">0</td>
+            </tr>
+            <tr>
+              <td>FORWARDING</td>
+              <td></td>
+              <td colspan="2"><input type="text" id="rateForwarding" /></td>
+              <td id="amtForwarding">0</td>
+            </tr>
+            <tr>
+              <td>Profit</td>
+              <td></td>
+              <td colspan="2"><input type="text" id="rateProfit" /></td>
+              <td id="amtProfit">0</td>
+            </tr>
+            <!-- <tr>
+              <td>OVERHEAD, TOOL MAINTANANCE, VISUAL INSPACTION & PROFFIT</td>
+              <td></td>
+              <td colspan="2">20%</td>
+              <td>1.64</td>
+            </tr> -->
+            <tr>
+              <td>TOTAL RATE OF PER PEES</td>
+              <td></td>
+              <td colspan="2"></td>
+              <td id="amtTotalrateofperpees">0</td>
+            </tr>
+            <tr>
+              <td colspan="5">
+                NOTE :- TRANSPORTATION CHARGES EXTRA IS APPLICABLE AT THAT TIME
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
