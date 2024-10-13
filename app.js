@@ -58,6 +58,7 @@ const amtForwarding = document.getElementById("amtForwarding");
 const rateProfit = document.getElementById("rateProfit");
 const amtProfit = document.getElementById("amtProfit");
 const amtTotalrateofperpees = document.getElementById("amtTotalrateofperpees");
+const heightBlanksteepVal = document.getElementById("heightBlanksteepVal");
 let thickValue = 0;
 let heightBlankValue = 0;
 let stripSizeValue = 0;
@@ -103,87 +104,70 @@ let amtForwardingVal = 0;
 let rateProfitVal = 0;
 let amtProfitVal = 0;
 
-partNames.addEventListener("change", (e) => {
+partNames.addEventListener("change", () => {
   console.log(partNames.value);
 });
 
-function handleMaterialNames() {
-  if (materialNames.value === "H.R.P.") {
-  }
-  if (materialNames.value === "CR") {
-  }
-  if (materialNames.value === "H.R.") {
-  }
-}
-
-sheetThickness.addEventListener("keydown", (e) => {
-  if (e.key == "Enter") {
-    thickValue = sheetThickness.value;
-    sheetThickness.value = thickValue;
-    // sheetThickness.disabled = true;
-    sheetSize.innerHTML = `1250X2500X${thickValue}MM<br />= ${eval(
-      1250 * 2500 * thickValue
-    )}`;
-    sheetWeightVal = eval((1250 * 2500 * thickValue * 7.85) / 1000000);
-    sheetWeight.innerText = `${sheetWeightVal}`;
-  }
+sheetThickness.addEventListener("input", () => {
+  thickValue = sheetThickness.value;
+  sheetThickness.value = thickValue;
+  // sheetThickness.disabled = true;
+  sheetSize.innerHTML = `1250X2500X${thickValue}MM<br />= ${eval(
+    1250 * 2500 * thickValue
+  )}`;
+  sheetWeightVal = eval((1250 * 2500 * thickValue * 7.85) / 1000000);
+  sheetWeight.innerText = `${sheetWeightVal}`;
 });
 
-stripSize.addEventListener("keydown", (event) => {
-  if (event.key == "Enter") {
-    stripSizeValue = stripSize.value;
-    stripSize.value = stripSizeValue;
-    streepWeightOutput = eval(
-      (stripSizeValue * 1250 * thickValue * 7.85) / 1000000
-    );
-    console.log(streepWeightOutput);
-    // stripSize.disabled = true;
-    streepWeight.innerText = `${Number(streepWeightOutput).toFixed(3)}`;
-    blankinSteepVal = Math.floor(eval(2500 / stripSizeValue));
-    stripSheet.innerHTML = `2500/${stripSizeValue} <br />= ${blankinSteepVal}`;
-  }
+stripSize.addEventListener("input", () => {
+  stripSizeValue = stripSize.value;
+  stripSize.value = stripSizeValue;
+  streepWeightOutput = eval(
+    (stripSizeValue * 1250 * thickValue * 7.85) / 1000000
+  );
+  console.log(streepWeightOutput);
+  // stripSize.disabled = true;
+  streepWeight.innerText = `${Number(streepWeightOutput).toFixed(3)}`;
+  blankinSteepVal = Math.floor(eval(2500 / stripSizeValue));
+  stripSheet.innerHTML = `2500/${stripSizeValue} <br />= ${blankinSteepVal}`;
 });
 
-heightBlank.addEventListener("keydown", (e) => {
-  if (e.key == "Enter") {
-    heightBlankValue = heightBlank.value;
-    heightBlank.value = heightBlankValue;
-    stripinsheetVal = Math.floor(eval(1250 / heightBlankValue));
-    blankSteep.innerHTML = `1250/${heightBlankValue} <br />= ${stripinsheetVal}`;
-    totalblankinSheetOutput = stripinsheetVal * blankinSteepVal;
-    totalBlanksheet.innerHTML = `${stripinsheetVal}X${blankinSteepVal} <br />= ${totalblankinSheetOutput}`;
-    grossweightTotalVal = sheetWeightVal / totalblankinSheetOutput;
-    grossWeight.innerText = grossweightTotalVal;
-  }
+heightBlank.addEventListener("input", () => {
+  heightBlankValue = heightBlank.value;
+  heightBlank.value = heightBlankValue;
+  stripinsheetVal = Math.floor(eval(1250 / heightBlankValue));
+  // blankSteep.innerHTML = `1250/<input type="text" id="heightBlank" /> <br />= ${stripinsheetVal}`;
+  heightBlanksteepVal.innerText = stripinsheetVal;
+
+  totalblankinSheetOutput = stripinsheetVal * blankinSteepVal;
+  totalBlanksheet.innerHTML = `${stripinsheetVal}X${blankinSteepVal} <br />= ${totalblankinSheetOutput}`;
+  grossweightTotalVal = sheetWeightVal / totalblankinSheetOutput;
+  grossWeight.innerText = grossweightTotalVal;
+
   // console.log(streepWeightOutput, blankinSteepVal);
 });
 
-rateperKgVal.addEventListener("keydown", (e) => {
-  if (e.key == "Enter") {
-    inputrateperkgVal = rateperKgVal.value;
-    rateperKgVal.value = inputrateperkgVal;
-    amtofGrossweightValue = inputrateperkgVal * grossweightTotalVal;
-    amtofGrossweight.innerText = inputrateperkgVal * grossweightTotalVal;
-    findamtTotalrateofperpees();
-  }
+rateperKgVal.addEventListener("input", () => {
+  inputrateperkgVal = rateperKgVal.value;
+  rateperKgVal.value = inputrateperkgVal;
+  amtofGrossweightValue = inputrateperkgVal * grossweightTotalVal;
+  amtofGrossweight.innerText = inputrateperkgVal * grossweightTotalVal;
+  findamtTotalrateofperpees();
 });
 
-netWeight.addEventListener("keydown", (e) => {
-  if (e.key == "Enter") {
-    netWeightVal = netWeight.value;
-    netWeight.value = netWeightVal;
-    scrapWeightinKgVal.innerText = grossweightTotalVal - netWeightVal;
-    findamtTotalrateofperpees();
-  }
+netWeight.addEventListener("input", () => {
+  netWeightVal = netWeight.value;
+  netWeight.value = netWeightVal;
+  scrapWeightinKgVal.innerText = grossweightTotalVal - netWeightVal;
+  findamtTotalrateofperpees();
 });
 
-scrapRateperkg.addEventListener("keydown", (e) => {
-  if (e.key == "Enter") {
-    scrapRateperKGVal = scrapRateperkg.value;
-    scrapRateperkg.value = scrapRateperKGVal;
-    totalAmtofScrap.innerText =
-      (grossweightTotalVal - netWeightVal) * scrapRateperKGVal;
-  }
+scrapRateperkg.addEventListener("input", () => {
+  scrapRateperKGVal = scrapRateperkg.value;
+  scrapRateperkg.value = scrapRateperKGVal;
+  totalAmtofScrap.innerText =
+    (grossweightTotalVal - netWeightVal) * scrapRateperKGVal;
+
   totalMaterialCostValue =
     inputrateperkgVal * grossweightTotalVal -
     (grossweightTotalVal - netWeightVal) * scrapRateperKGVal;
@@ -193,55 +177,45 @@ scrapRateperkg.addEventListener("keydown", (e) => {
   findamtTotalrateofperpees();
 });
 
-shearingPerkgRate.addEventListener("keydown", (e) => {
-  if (e.key == "Enter") {
-    shearingPerkgRateVal = shearingPerkgRate.value;
-    shearingPerkgRate.value = shearingPerkgRateVal + " kg";
-    shearingAmtValue = grossweightTotalVal * shearingPerkgRateVal;
-    shearingAmt.innerText = grossweightTotalVal * shearingPerkgRateVal;
-    getTotalvalofProcessingcost();
-    findamtTotalrateofperpees();
-  }
+shearingPerkgRate.addEventListener("input", () => {
+  shearingPerkgRateVal = shearingPerkgRate.value;
+  shearingPerkgRate.value = shearingPerkgRateVal + " kg";
+  shearingAmtValue = grossweightTotalVal * shearingPerkgRateVal;
+  shearingAmt.innerText = grossweightTotalVal * shearingPerkgRateVal;
+  getTotalvalofProcessingcost();
+  findamtTotalrateofperpees();
 });
 
-tonageBlankingandPunching.addEventListener("keydown", (e) => {
-  if (e.key == "Enter") {
-    tonageBlankingandPunchingVal = tonageBlankingandPunching.value;
-    tonageBlankingandPunching.value = tonageBlankingandPunchingVal;
-    findamtTotalrateofperpees();
-  }
+tonageBlankingandPunching.addEventListener("input", () => {
+  tonageBlankingandPunchingVal = tonageBlankingandPunching.value;
+  tonageBlankingandPunching.value = tonageBlankingandPunchingVal;
+  findamtTotalrateofperpees();
 });
 
-rateBlankingandPunching.addEventListener("keydown", (e) => {
-  if (e.key == "Enter") {
-    rateBlankingandPunchingVal = rateBlankingandPunching.value;
-    rateBlankingandPunching.value = rateBlankingandPunchingVal + " %";
-    amtBlankingandPunchingValue = eval(
-      (tonageBlankingandPunchingVal * rateBlankingandPunchingVal) / 10000
-    );
-    amtBlankingandPunching.innerText = amtBlankingandPunchingValue;
-    getTotalvalofProcessingcost();
-    findamtTotalrateofperpees();
-  }
+rateBlankingandPunching.addEventListener("input", () => {
+  rateBlankingandPunchingVal = rateBlankingandPunching.value;
+  rateBlankingandPunching.value = rateBlankingandPunchingVal;
+  amtBlankingandPunchingValue = eval(
+    (tonageBlankingandPunchingVal * rateBlankingandPunchingVal) / 10000
+  );
+  amtBlankingandPunching.innerText = amtBlankingandPunchingValue;
+  getTotalvalofProcessingcost();
+  findamtTotalrateofperpees();
 });
 
-tonageBending.addEventListener("keydown", (e) => {
-  if (e.key == "Enter") {
-    tonageBendingVal = tonageBending.value;
-    tonageBending.value = tonageBendingVal;
-    findamtTotalrateofperpees();
-  }
+tonageBending.addEventListener("input", () => {
+  tonageBendingVal = tonageBending.value;
+  tonageBending.value = tonageBendingVal;
+  findamtTotalrateofperpees();
 });
 
-rateBending.addEventListener("keydown", (e) => {
-  if (e.key == "Enter") {
-    rateBendingVal = rateBending.value;
-    rateBending.value = rateBendingVal + " %";
-    amtBendindTonValue = eval((tonageBendingVal * rateBendingVal) / 10000);
-    amtBendindTon.innerText = amtBendindTonValue;
-    getTotalvalofProcessingcost();
-    findamtTotalrateofperpees();
-  }
+rateBending.addEventListener("input", () => {
+  rateBendingVal = rateBending.value;
+  rateBending.value = rateBendingVal;
+  amtBendindTonValue = eval((tonageBendingVal * rateBendingVal) / 10000);
+  amtBendindTon.innerText = amtBendindTonValue;
+  getTotalvalofProcessingcost();
+  findamtTotalrateofperpees();
 });
 
 function getTotalvalofProcessingcost() {
@@ -252,138 +226,112 @@ function getTotalvalofProcessingcost() {
   findamtTotalrateofperpees();
 }
 
-rateRejection.addEventListener("keydown", (e) => {
-  if (e.key == "Enter") {
-    rateRejectionVal = rateRejection.value;
-    rateRejection.value = rateRejectionVal + " %";
-    amtRejectionValue =
-      ((totalMaterialCostValue + amtTotalprocessingcostValue) *
-        rateRejectionVal) /
-      100;
-    amtRejection.innerText =
-      ((totalMaterialCostValue + amtTotalprocessingcostValue) *
-        rateRejectionVal) /
-      100;
-    findamtTotalrateofperpees();
-  }
+rateRejection.addEventListener("input", () => {
+  rateRejectionVal = rateRejection.value;
+  rateRejection.value = rateRejectionVal;
+  amtRejectionValue =
+    ((totalMaterialCostValue + amtTotalprocessingcostValue) *
+      rateRejectionVal) /
+    100;
+  amtRejection.innerText =
+    ((totalMaterialCostValue + amtTotalprocessingcostValue) *
+      rateRejectionVal) /
+    100;
+  findamtTotalrateofperpees();
 });
 
-rateInvantry.addEventListener("keydown", (e) => {
-  if (e.key == "Enter") {
-    rateInvantryVal = rateInvantry.value;
-    rateInvantry.value = rateInvantryVal + " %";
-    amtInvantryValue = (amtofGrossweightValue * rateInvantryVal) / 100;
-    amtInvantry.innerText = (amtofGrossweightValue * rateInvantryVal) / 100;
-    console.log(amtofGrossweightValue, rateInvantryVal);
-    findamtTotalrateofperpees();
-  }
+rateInvantry.addEventListener("input", () => {
+  rateInvantryVal = rateInvantry.value;
+  rateInvantry.value = rateInvantryVal;
+  amtInvantryValue = (amtofGrossweightValue * rateInvantryVal) / 100;
+  amtInvantry.innerText = (amtofGrossweightValue * rateInvantryVal) / 100;
+  console.log(amtofGrossweightValue, rateInvantryVal);
+  findamtTotalrateofperpees();
 });
 
-amtGauging.addEventListener("keydown", (e) => {
-  if (e.key == "Enter") {
-    amtGaugingVal = Number(amtGauging.value);
-    amtGauging.value = amtGaugingVal;
-    findamtTotalrateofperpees();
-  }
+amtGauging.addEventListener("input", () => {
+  amtGaugingVal = Number(amtGauging.value);
+  amtGauging.value = amtGaugingVal;
+  findamtTotalrateofperpees();
 });
 
-amtFinalinspaction.addEventListener("keydown", (e) => {
-  if (e.key == "Enter") {
-    amtFinalinspactionVal = Number(amtFinalinspaction.value);
-    amtFinalinspaction.value = amtFinalinspactionVal;
-    findamtTotalrateofperpees();
-  }
+amtFinalinspaction.addEventListener("input", () => {
+  amtFinalinspactionVal = Number(amtFinalinspaction.value);
+  amtFinalinspaction.value = amtFinalinspactionVal;
+  findamtTotalrateofperpees();
 });
 
-amtInspaction.addEventListener("keydown", (e) => {
-  if (e.key == "Enter") {
-    amtInspactionVal = Number(amtInspaction.value);
-    amtInspaction.value = amtInspactionVal;
-    findamtTotalrateofperpees();
-  }
+amtInspaction.addEventListener("input", () => {
+  amtInspactionVal = Number(amtInspaction.value);
+  amtInspaction.value = amtInspactionVal;
+  findamtTotalrateofperpees();
 });
 
-rateIccgrossrm.addEventListener("keydown", (e) => {
-  if (e.key == "Enter") {
-    rateIccgrossrmVal = rateIccgrossrm.value;
-    rateIccgrossrm.value = rateIccgrossrmVal;
-    amtIccgrossVal = (amtofGrossweightValue * rateIccgrossrmVal) / 100;
-    amtIccgross.innerText = amtIccgrossVal;
-    findamtTotalrateofperpees();
-  }
+rateIccgrossrm.addEventListener("input", () => {
+  rateIccgrossrmVal = rateIccgrossrm.value;
+  rateIccgrossrm.value = rateIccgrossrmVal;
+  amtIccgrossVal = (amtofGrossweightValue * rateIccgrossrmVal) / 100;
+  amtIccgross.innerText = amtIccgrossVal;
+  findamtTotalrateofperpees();
 });
 
-bopHandlingAmt.addEventListener("keydown", (e) => {
-  if (e.key == "Enter") {
-    bopHandlingAmtVal = Number(bopHandlingAmt.value);
-    bopHandlingAmt.value = bopHandlingAmtVal;
-    findamtTotalrateofperpees();
-  }
+bopHandlingAmt.addEventListener("input", () => {
+  bopHandlingAmtVal = Number(bopHandlingAmt.value);
+  bopHandlingAmt.value = bopHandlingAmtVal;
+  findamtTotalrateofperpees();
 });
 
-rateDiemaintenance.addEventListener("keydown", (e) => {
-  if (e.key == "Enter") {
-    rateDiemaintenanceVal = rateDiemaintenance.value;
-    rateDiemaintenance.value = rateDiemaintenanceVal + " %";
-    amtDiemaintenceVal = (amtofGrossweightValue * rateDiemaintenanceVal) / 100;
-    amtDiemaintence.innerText = amtDiemaintenceVal;
-    findamtTotalrateofperpees();
-  }
+rateDiemaintenance.addEventListener("input", () => {
+  rateDiemaintenanceVal = rateDiemaintenance.value;
+  rateDiemaintenance.value = rateDiemaintenanceVal;
+  amtDiemaintenceVal = (amtofGrossweightValue * rateDiemaintenanceVal) / 100;
+  amtDiemaintence.innerText = amtDiemaintenceVal;
+  findamtTotalrateofperpees();
 });
 
-rateOverheadProcess.addEventListener("keydown", (e) => {
-  if (e.key == "Enter") {
-    rateOverheadProcessVal = rateOverheadProcess.value;
-    rateOverheadProcess.value = rateOverheadProcessVal + " %";
-    amtOverheadProcessVal =
-      (amtTotalprocessingcostValue * rateOverheadProcessVal) / 100;
-    amtOverheadProcess.innerText = amtOverheadProcessVal;
-    findamtTotalrateofperpees();
-  }
+rateOverheadProcess.addEventListener("input", () => {
+  rateOverheadProcessVal = rateOverheadProcess.value;
+  rateOverheadProcess.value = rateOverheadProcessVal;
+  amtOverheadProcessVal =
+    (amtTotalprocessingcostValue * rateOverheadProcessVal) / 100;
+  amtOverheadProcess.innerText = amtOverheadProcessVal;
+  findamtTotalrateofperpees();
 });
 
-tonagePackinginGunnybag.addEventListener("keydown", (e) => {
-  if (e.key == "Enter") {
-    tonagePackinginGunnybagVal = tonagePackinginGunnybag.value;
-    tonagePackinginGunnybag.value = tonagePackinginGunnybagVal + " Pic";
-    findamtTotalrateofperpees();
-  }
+tonagePackinginGunnybag.addEventListener("input", (e) => {
+  tonagePackinginGunnybagVal = tonagePackinginGunnybag.value;
+  tonagePackinginGunnybag.value = tonagePackinginGunnybagVal;
+  findamtTotalrateofperpees();
 });
 
-ratepackinginGunnybag.addEventListener("keydown", (e) => {
-  if (e.key == "Enter") {
-    ratepackinginGunnybagVal = ratepackinginGunnybag.value;
-    ratepackinginGunnybag.value = ratepackinginGunnybagVal;
-    console.log(ratepackinginGunnybagVal);
-    amtpackinginGunnybagVal =
-      tonagePackinginGunnybagVal / ratepackinginGunnybagVal;
-    console.log(amtpackinginGunnybagVal);
-    amtpackinginGunnybag.innerText = amtpackinginGunnybagVal;
-    findamtTotalrateofperpees();
-    // console.log(amtpackinginGunnybagVal);
-  }
+ratepackinginGunnybag.addEventListener("input", () => {
+  ratepackinginGunnybagVal = ratepackinginGunnybag.value;
+  ratepackinginGunnybag.value = ratepackinginGunnybagVal;
+  console.log(ratepackinginGunnybagVal);
+  amtpackinginGunnybagVal =
+    tonagePackinginGunnybagVal / ratepackinginGunnybagVal;
+  console.log(amtpackinginGunnybagVal);
+  amtpackinginGunnybag.innerText = amtpackinginGunnybagVal;
+  findamtTotalrateofperpees();
+  // console.log(amtpackinginGunnybagVal);
 });
 
-rateForwarding.addEventListener("keydown", (e) => {
-  if (e.key == "Enter") {
-    rateForwardingVal = rateForwarding.value;
-    rateForwarding.value = rateForwardingVal;
-    amtForwardingVal = grossweightTotalVal * rateForwardingVal;
-    amtForwarding.innerText = amtForwardingVal;
-    findamtTotalrateofperpees();
-  }
+rateForwarding.addEventListener("input", () => {
+  rateForwardingVal = rateForwarding.value;
+  rateForwarding.value = rateForwardingVal;
+  amtForwardingVal = grossweightTotalVal * rateForwardingVal;
+  amtForwarding.innerText = amtForwardingVal;
+  findamtTotalrateofperpees();
 });
 
-rateProfit.addEventListener("keydown", (e) => {
-  if (e.key == "Enter") {
-    rateProfitVal = rateProfit.value;
-    rateProfit.value = rateProfitVal;
-    amtProfitVal =
-      ((totalMaterialCostValue + amtTotalprocessingcostValue) * rateProfitVal) /
-      100;
-    amtProfit.innerText = amtProfitVal;
-    findamtTotalrateofperpees();
-  }
+rateProfit.addEventListener("input", () => {
+  rateProfitVal = rateProfit.value;
+  rateProfit.value = rateProfitVal;
+  amtProfitVal =
+    ((totalMaterialCostValue + amtTotalprocessingcostValue) * rateProfitVal) /
+    100;
+  amtProfit.innerText = amtProfitVal;
+  findamtTotalrateofperpees();
 });
 
 function findamtTotalrateofperpees() {

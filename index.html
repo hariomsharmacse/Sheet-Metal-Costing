@@ -61,11 +61,11 @@
           </div>
           <div class="SHEET-SIZE">
             SHEET SIZE
-            <div id="sheetsize">1250X2500X2.6MM<br />= 8125000</div>
+            <div id="sheetsize">1250X2500X0<br />= 0</div>
           </div>
           <div class="SHEET-WEIGHT">
             SHEET WEIGHT
-            <div id="sheetweight">63.781</div>
+            <div id="sheetweight">0</div>
           </div>
           <div class="STRIP-SIZE">
             STRIP SIZE
@@ -82,7 +82,10 @@
           <div class="BLANK-STEEP">
             BLANK IN 01 STEEP
             <div id="blanksteep">
-              1250/ <input type="text" id="heightBlank" /> <br />= 0
+              1250/ <input type="text" id="heightBlank" /> <br />=<span
+                id="heightBlanksteepVal"
+                >0</span
+              >
             </div>
           </div>
           <div class="TOTAL-BLANK">
@@ -147,14 +150,18 @@
               <td>BLANKING & PUNCHING COMPOUND &#40;TON&#41;</td>
               <td><input type="text" id="tonageBlankingandPunching" /></td>
               <td colspan="2">
-                <input type="text" id="rateBlankingandPunching" />
+                <input type="text" id="rateBlankingandPunching" /><span>
+                  %</span
+                >
               </td>
               <td id="amtBlankingandPunching">0</td>
             </tr>
             <tr>
               <td>BENDING &#40; TON&#41;</td>
               <td><input type="text" id="tonageBending" /></td>
-              <td colspan="2"><input type="text" id="rateBending" /></td>
+              <td colspan="2">
+                <input type="text" id="rateBending" /><span> %</span>
+              </td>
               <td id="amtBendindTon">0</td>
             </tr>
             <tr>
@@ -172,32 +179,36 @@
             <tr>
               <td>REJECTION</td>
               <td></td>
-              <td colspan="2"><input type="text" id="rateRejection" /></td>
+              <td colspan="2">
+                <input type="text" id="rateRejection" /><span> %</span>
+              </td>
               <td id="amtRejection">0</td>
             </tr>
             <tr>
               <td>INVANTRY</td>
               <td></td>
-              <td colspan="2"><input type="text" id="rateInvantry" /></td>
+              <td colspan="2">
+                <input type="text" id="rateInvantry" /><span> %</span>
+              </td>
               <td id="amtInvantry">0</td>
             </tr>
             <tr>
               <td>GAUGING</td>
               <td></td>
               <td colspan="2"></td>
-              <td><input type="text" id="amtGauging" /></td>
+              <td><input type="text" id="amtGauging" step="any" /></td>
             </tr>
             <tr>
               <td>FINAL INSPACTION</td>
               <td></td>
               <td colspan="2"></td>
-              <td><input type="text" id="amtFinalinspaction" /></td>
+              <td><input type="text" id="amtFinalinspaction" step="any" /></td>
             </tr>
             <tr>
               <td>INSPACTION</td>
               <td></td>
               <td colspan="2"></td>
-              <td><input type="text" id="amtInspaction" /></td>
+              <td><input type="text" id="amtInspaction" step="any" /></td>
             </tr>
             <tr>
               <td>ICC GROSS RM</td>
@@ -215,20 +226,26 @@
             <tr>
               <td>DIE MAINTENANCE</td>
               <td></td>
-              <td colspan="2"><input type="text" id="rateDiemaintenance" /></td>
+              <td colspan="2">
+                <input type="text" id="rateDiemaintenance" /><span> %</span>
+              </td>
               <td id="amtDiemaintence">0</td>
             </tr>
             <tr>
               <td>OVER-HEAD PROCESS</td>
               <td></td>
               <td colspan="2">
-                <input type="text" id="rateOverheadProcess" />
+                <input type="text" id="rateOverheadProcess" /><span> %</span>
               </td>
               <td id="amtOverheadProcess">0</td>
             </tr>
             <tr>
               <td>PACKING IN GUNNY BAG PER PEES</td>
-              <td><input type="text" id="tonagePackinginGunnybag" /></td>
+              <td>
+                <input type="text" id="tonagePackinginGunnybag" /><span>
+                  Pic</span
+                >
+              </td>
               <td colspan="2">
                 <input type="text" id="ratepackinginGunnybag" />
               </td>

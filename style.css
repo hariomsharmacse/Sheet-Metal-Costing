@@ -450,9 +450,10 @@ table {
 }
 th,
 td {
-  border: 1px solid #ffffff;
+  border: 1px solid #3aa25b;
   padding: 2px;
   text-align: center;
+  letter-spacing: 1.5px;
 }
 th {
   background-color: transparent;
@@ -516,6 +517,12 @@ th {
   border: none;
   font-size: 12px;
   width: 30px;
+}
+
+#amtGauging,
+#amtFinalinspaction,
+#amtInspaction {
+  width: 35px;
 }
 
 @media (max-width: 1200px) {
