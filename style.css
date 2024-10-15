@@ -630,7 +630,7 @@ th {
   .TOTAL-BLANK {
     width: 200px;
     font-size: 14px;
-    margin-left: 5%;
+    /* margin-left: 5%; */
   }
 
   #THICKNESS,
