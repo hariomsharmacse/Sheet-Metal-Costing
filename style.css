@@ -172,7 +172,6 @@ body {
 }
 
 .meterial {
-  width: fit-content;
   /* margin-top: 10px; */
   display: flex;
   /*align-items: center;
@@ -192,7 +191,6 @@ body {
 }
 
 .SHEET-THICKNESS {
-  width: 250px;
   text-align: center;
   box-shadow: 0px 0px 5px white;
   margin: 10px;
@@ -227,7 +225,6 @@ body {
 }
 
 .SHEET-SIZE {
-  width: fit-content;
   text-align: center;
   box-shadow: 0px 0px 5px white;
   margin: 10px;
@@ -257,7 +254,6 @@ body {
 }
 
 .SHEET-WEIGHT {
-  width: fit-content;
   text-align: center;
   box-shadow: 0px 0px 5px white;
   margin: 10px;
@@ -287,7 +283,6 @@ body {
 }
 
 .STRIP-SIZE {
-  width: 250px;
   /* width: fit-content; */
   text-align: center;
   box-shadow: 0px 0px 5px white;
@@ -323,7 +318,6 @@ body {
 }
 
 .STREEP-WEIGHT {
-  width: fit-content;
   text-align: center;
   box-shadow: 0px 0px 5px white;
   margin: 10px;
@@ -353,7 +347,6 @@ body {
 }
 
 .STRIP-SHEET {
-  width: fit-content;
   text-align: center;
   box-shadow: 0px 0px 5px white;
   margin: 10px;
@@ -383,7 +376,6 @@ body {
 }
 
 .BLANK-STEEP {
-  width: fit-content;
   text-align: center;
   box-shadow: 0px 0px 5px white;
   margin: 10px;
@@ -413,7 +405,6 @@ body {
 }
 
 .TOTAL-BLANK {
-  width: fit-content;
   text-align: center;
   box-shadow: 0px 0px 5px white;
   margin: 10px;
@@ -529,11 +520,11 @@ th {
   .main {
     display: flex;
     align-items: center;
-    /* justify-content: center; */
     flex-direction: column;
     width: 100%;
     height: fit-content;
-    margin-top: 300px;
+    margin-top: 270px;
+    font-size: smaller;
   }
   .part1 {
     width: 100%;
@@ -543,5 +534,95 @@ th {
   .part2 {
     width: 100%;
     height: fit-content;
+  }
+
+  #details-box {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: stretch;
+    align-content: stretch;
+    /* grid-template-rows: repeat(4, 1fr); */
+  }
+
+  .meterial,
+  .SHEET-THICKNESS,
+  .SHEET-SIZE,
+  .SHEET-WEIGHT,
+  .STRIP-SIZE,
+  .STREEP-WEIGHT,
+  .STRIP-SHEET,
+  .BLANK-STEEP,
+  .TOTAL-BLANK {
+    width: 150px;
+    font-size: 11px;
+  }
+
+  #THICKNESS,
+  #sheetsize,
+  #sheetweight,
+  #stripsize,
+  #streepweight,
+  #stripsheet,
+  #blanksteep,
+  #totalblank {
+    width: 100px;
+    /* padding: 2px 4px; */
+  }
+}
+
+@media (max-width: 600px) {
+  .main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    margin-top: 470px;
+    font-size: smaller;
+  }
+  .part1 {
+    width: 100%;
+    height: fit-content;
+  }
+
+  .part2 {
+    width: 100%;
+    height: fit-content;
+  }
+
+  #details-box {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: stretch;
+    align-content: stretch;
+    /* grid-template-rows: repeat(4, 1fr); */
+  }
+
+  .meterial,
+  .SHEET-THICKNESS,
+  .SHEET-SIZE,
+  .SHEET-WEIGHT,
+  .STRIP-SIZE,
+  .STREEP-WEIGHT,
+  .STRIP-SHEET,
+  .BLANK-STEEP,
+  .TOTAL-BLANK {
+    width: 200px;
+    font-size: 14px;
+    margin-left: 7%;
+  }
+
+  #THICKNESS,
+  #sheetsize,
+  #sheetweight,
+  #stripsize,
+  #streepweight,
+  #stripsheet,
+  #blanksteep,
+  #totalblank {
+    width: 150px;
+    /* padding: 2px 4px; */
   }
 }

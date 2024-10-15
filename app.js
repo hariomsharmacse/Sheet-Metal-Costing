@@ -250,19 +250,20 @@ rateInvantry.addEventListener("input", () => {
 });
 
 amtGauging.addEventListener("input", () => {
-  amtGaugingVal = Number(amtGauging.value);
+  amtGaugingVal = amtGauging.value;
+  console.log(typeof amtGauging.value);
   amtGauging.value = amtGaugingVal;
   findamtTotalrateofperpees();
 });
 
 amtFinalinspaction.addEventListener("input", () => {
-  amtFinalinspactionVal = Number(amtFinalinspaction.value);
+  amtFinalinspactionVal = amtFinalinspaction.value;
   amtFinalinspaction.value = amtFinalinspactionVal;
   findamtTotalrateofperpees();
 });
 
 amtInspaction.addEventListener("input", () => {
-  amtInspactionVal = Number(amtInspaction.value);
+  amtInspactionVal = amtInspaction.value;
   amtInspaction.value = amtInspactionVal;
   findamtTotalrateofperpees();
 });
@@ -276,7 +277,7 @@ rateIccgrossrm.addEventListener("input", () => {
 });
 
 bopHandlingAmt.addEventListener("input", () => {
-  bopHandlingAmtVal = Number(bopHandlingAmt.value);
+  bopHandlingAmtVal = bopHandlingAmt.value;
   bopHandlingAmt.value = bopHandlingAmtVal;
   findamtTotalrateofperpees();
 });
@@ -340,11 +341,11 @@ function findamtTotalrateofperpees() {
     amtTotalprocessingcostValue +
     amtRejectionValue +
     amtInvantryValue +
-    amtGaugingVal +
-    amtFinalinspactionVal +
-    amtInspactionVal +
+    Number(amtGaugingVal) +
+    Number(amtFinalinspactionVal) +
+    Number(amtInspactionVal) +
     amtIccgrossVal +
-    bopHandlingAmtVal +
+    Number(bopHandlingAmtVal) +
     amtDiemaintenceVal +
     amtOverheadProcessVal +
     amtpackinginGunnybagVal +
