@@ -553,7 +553,7 @@ th {
   .STRIP-SHEET,
   .BLANK-STEEP,
   .TOTAL-BLANK {
-    width: 150px;
+    width: 170px;
     font-size: 11px;
   }
 
@@ -616,7 +616,7 @@ th {
   .TOTAL-BLANK {
     width: 200px;
     font-size: 14px;
-    margin-left: 7%;
+    margin-left: 5%;
   }
 
   #THICKNESS,
@@ -641,5 +641,13 @@ th {
   .logo img {
     width: 35px;
     height: 35px;
+  }
+
+  .TOTAL-BLANK {
+    grid-column: span 2;
+    width: 400px;
+    /* grid-column-start: 1;
+    grid-column-end: 3; */
+    /* width: 300px; */
   }
 }
