@@ -28,6 +28,7 @@ body {
   width: 99%;
   /* height: 500px; */
   backdrop-filter: blur(10px);
+  border: 1px solid #155deebc;
   /* text-align: center; */
   border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -514,6 +515,19 @@ th {
 #amtFinalinspaction,
 #amtInspaction {
   width: 35px;
+}
+
+.meterial,
+.SHEET-THICKNESS,
+.SHEET-SIZE,
+.SHEET-WEIGHT,
+.STRIP-SIZE,
+.STREEP-WEIGHT,
+.STRIP-SHEET,
+.BLANK-STEEP,
+.TOTAL-BLANK {
+  border: 1px solid #155deebc;
+  /* box-shadow: 0px 0px 2px rgb(255, 255, 255); */
 }
 
 @media (max-width: 1200px) {
