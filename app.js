@@ -115,7 +115,7 @@ sheetThickness.addEventListener("input", () => {
   sheetSize.innerHTML = `1250X2500X${thickValue}MM<br />= ${eval(
     1250 * 2500 * thickValue
   )}`;
-  sheetWeightVal = eval((1250 * 2500 * thickValue * 7.85) / 1000000);
+  sheetWeightVal = eval((1250 * 2500 * thickValue * 7.85) / 1000000).toFixed(2);
   sheetWeight.innerText = `${sheetWeightVal}`;
 });
 
@@ -124,7 +124,7 @@ stripSize.addEventListener("input", () => {
   stripSize.value = stripSizeValue;
   streepWeightOutput = eval(
     (stripSizeValue * 1250 * thickValue * 7.85) / 1000000
-  );
+  ).toFixed(2);
   console.log(streepWeightOutput);
   // stripSize.disabled = true;
   streepWeight.innerText = `${Number(streepWeightOutput).toFixed(3)}`;
@@ -142,7 +142,7 @@ heightBlank.addEventListener("input", () => {
   totalblankinSheetOutput = stripinsheetVal * blankinSteepVal;
   totalBlanksheet.innerHTML = `${stripinsheetVal}X${blankinSteepVal} <br />= ${totalblankinSheetOutput}`;
   grossweightTotalVal = sheetWeightVal / totalblankinSheetOutput;
-  grossWeight.innerText = grossweightTotalVal;
+  grossWeight.innerText = grossweightTotalVal.toFixed(2);
 
   // console.log(streepWeightOutput, blankinSteepVal);
 });
@@ -151,29 +151,36 @@ rateperKgVal.addEventListener("input", () => {
   inputrateperkgVal = rateperKgVal.value;
   rateperKgVal.value = inputrateperkgVal;
   amtofGrossweightValue = inputrateperkgVal * grossweightTotalVal;
-  amtofGrossweight.innerText = inputrateperkgVal * grossweightTotalVal;
+  amtofGrossweight.innerText = (
+    inputrateperkgVal * grossweightTotalVal
+  ).toFixed(2);
   findamtTotalrateofperpees();
 });
 
 netWeight.addEventListener("input", () => {
   netWeightVal = netWeight.value;
   netWeight.value = netWeightVal;
-  scrapWeightinKgVal.innerText = grossweightTotalVal - netWeightVal;
+  scrapWeightinKgVal.innerText = (grossweightTotalVal - netWeightVal).toFixed(
+    2
+  );
   findamtTotalrateofperpees();
 });
 
 scrapRateperkg.addEventListener("input", () => {
   scrapRateperKGVal = scrapRateperkg.value;
   scrapRateperkg.value = scrapRateperKGVal;
-  totalAmtofScrap.innerText =
-    (grossweightTotalVal - netWeightVal) * scrapRateperKGVal;
+  totalAmtofScrap.innerText = (
+    (grossweightTotalVal - netWeightVal) *
+    scrapRateperKGVal
+  ).toFixed(2);
 
   totalMaterialCostValue =
     inputrateperkgVal * grossweightTotalVal -
     (grossweightTotalVal - netWeightVal) * scrapRateperKGVal;
-  materialCostFinal.innerText =
+  materialCostFinal.innerText = (
     inputrateperkgVal * grossweightTotalVal -
-    (grossweightTotalVal - netWeightVal) * scrapRateperKGVal;
+    (grossweightTotalVal - netWeightVal) * scrapRateperKGVal
+  ).toFixed(2);
   findamtTotalrateofperpees();
 });
 
@@ -181,7 +188,9 @@ shearingPerkgRate.addEventListener("input", () => {
   shearingPerkgRateVal = shearingPerkgRate.value;
   shearingPerkgRate.value = shearingPerkgRateVal + " kg";
   shearingAmtValue = grossweightTotalVal * shearingPerkgRateVal;
-  shearingAmt.innerText = grossweightTotalVal * shearingPerkgRateVal;
+  shearingAmt.innerText = (grossweightTotalVal * shearingPerkgRateVal).toFixed(
+    2
+  );
   getTotalvalofProcessingcost();
   findamtTotalrateofperpees();
 });
@@ -221,8 +230,11 @@ rateBending.addEventListener("input", () => {
 function getTotalvalofProcessingcost() {
   amtTotalprocessingcostValue =
     shearingAmtValue + amtBlankingandPunchingValue + amtBendindTonValue;
-  amtTotalprocessingcost.innerText =
-    shearingAmtValue + amtBlankingandPunchingValue + amtBendindTonValue;
+  amtTotalprocessingcost.innerText = (
+    shearingAmtValue +
+    amtBlankingandPunchingValue +
+    amtBendindTonValue
+  ).toFixed(2);
   findamtTotalrateofperpees();
 }
 
@@ -233,10 +245,11 @@ rateRejection.addEventListener("input", () => {
     ((totalMaterialCostValue + amtTotalprocessingcostValue) *
       rateRejectionVal) /
     100;
-  amtRejection.innerText =
+  amtRejection.innerText = (
     ((totalMaterialCostValue + amtTotalprocessingcostValue) *
       rateRejectionVal) /
-    100;
+    100
+  ).toFixed(2);
   findamtTotalrateofperpees();
 });
 
@@ -244,7 +257,10 @@ rateInvantry.addEventListener("input", () => {
   rateInvantryVal = rateInvantry.value;
   rateInvantry.value = rateInvantryVal;
   amtInvantryValue = (amtofGrossweightValue * rateInvantryVal) / 100;
-  amtInvantry.innerText = (amtofGrossweightValue * rateInvantryVal) / 100;
+  amtInvantry.innerText = (
+    (amtofGrossweightValue * rateInvantryVal) /
+    100
+  ).toFixed(2);
   console.log(amtofGrossweightValue, rateInvantryVal);
   findamtTotalrateofperpees();
 });
@@ -272,7 +288,7 @@ rateIccgrossrm.addEventListener("input", () => {
   rateIccgrossrmVal = rateIccgrossrm.value;
   rateIccgrossrm.value = rateIccgrossrmVal;
   amtIccgrossVal = (amtofGrossweightValue * rateIccgrossrmVal) / 100;
-  amtIccgross.innerText = amtIccgrossVal;
+  amtIccgross.innerText = amtIccgrossVal.toFixed(2);
   findamtTotalrateofperpees();
 });
 
@@ -286,7 +302,7 @@ rateDiemaintenance.addEventListener("input", () => {
   rateDiemaintenanceVal = rateDiemaintenance.value;
   rateDiemaintenance.value = rateDiemaintenanceVal;
   amtDiemaintenceVal = (amtofGrossweightValue * rateDiemaintenanceVal) / 100;
-  amtDiemaintence.innerText = amtDiemaintenceVal;
+  amtDiemaintence.innerText = amtDiemaintenceVal.toFixed(2);
   findamtTotalrateofperpees();
 });
 
@@ -295,7 +311,7 @@ rateOverheadProcess.addEventListener("input", () => {
   rateOverheadProcess.value = rateOverheadProcessVal;
   amtOverheadProcessVal =
     (amtTotalprocessingcostValue * rateOverheadProcessVal) / 100;
-  amtOverheadProcess.innerText = amtOverheadProcessVal;
+  amtOverheadProcess.innerText = amtOverheadProcessVal.toFixed(2);
   findamtTotalrateofperpees();
 });
 
@@ -321,7 +337,7 @@ rateForwarding.addEventListener("input", () => {
   rateForwardingVal = rateForwarding.value;
   rateForwarding.value = rateForwardingVal;
   amtForwardingVal = grossweightTotalVal * rateForwardingVal;
-  amtForwarding.innerText = amtForwardingVal;
+  amtForwarding.innerText = amtForwardingVal.toFixed(2);
   findamtTotalrateofperpees();
 });
 
@@ -331,7 +347,7 @@ rateProfit.addEventListener("input", () => {
   amtProfitVal =
     ((totalMaterialCostValue + amtTotalprocessingcostValue) * rateProfitVal) /
     100;
-  amtProfit.innerText = amtProfitVal;
+  amtProfit.innerText = amtProfitVal.toFixed(2);
   findamtTotalrateofperpees();
 });
 

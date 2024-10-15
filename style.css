@@ -16,10 +16,10 @@ body {
   height: 100vh;
   background: url("background.jpg");
   background-size: cover;
-  display: flex;
+  /* display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: column; */
   color: white;
 }
 
@@ -518,12 +518,11 @@ th {
 
 @media (max-width: 1200px) {
   .main {
+    width: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 100%;
-    height: fit-content;
-    margin-top: 270px;
+    /* margin-top: 270px; */
     font-size: smaller;
   }
   .part1 {
@@ -573,12 +572,12 @@ th {
 
 @media (max-width: 600px) {
   .main {
-    display: flex;
+    /* display: flex;
     align-items: center;
-    flex-direction: column;
-    width: 100%;
-    height: fit-content;
-    margin-top: 470px;
+    flex-direction: column; */
+    width: fit-content;
+    /* height: fit-content; */
+    /* margin-top: 470px; */
     font-size: smaller;
   }
   .part1 {
@@ -624,5 +623,17 @@ th {
   #totalblank {
     width: 150px;
     /* padding: 2px 4px; */
+  }
+
+  .heading h1 {
+    color: #155eee;
+    text-align: center;
+    margin: 7px;
+    font-size: 25px;
+  }
+
+  .logo img {
+    width: 35px;
+    height: 35px;
   }
 }
