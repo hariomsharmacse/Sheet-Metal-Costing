@@ -570,6 +570,12 @@ th {
   }
 }
 
+#THICKNESS,
+#stripsize {
+  background-color: rgb(0, 0, 0);
+  outline: none;
+}
+
 @media (max-width: 600px) {
   .main {
     /* display: flex;
