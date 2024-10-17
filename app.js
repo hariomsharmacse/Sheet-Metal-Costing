@@ -186,7 +186,7 @@ scrapRateperkg.addEventListener("input", () => {
 
 shearingPerkgRate.addEventListener("input", () => {
   shearingPerkgRateVal = shearingPerkgRate.value;
-  shearingPerkgRate.value = shearingPerkgRateVal + " kg";
+  shearingPerkgRate.value = shearingPerkgRateVal;
   shearingAmtValue = grossweightTotalVal * shearingPerkgRateVal;
   shearingAmt.innerText = (grossweightTotalVal * shearingPerkgRateVal).toFixed(
     2
