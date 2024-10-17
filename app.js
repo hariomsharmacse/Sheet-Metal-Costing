@@ -328,7 +328,7 @@ ratepackinginGunnybag.addEventListener("input", () => {
   amtpackinginGunnybagVal =
     tonagePackinginGunnybagVal / ratepackinginGunnybagVal;
   console.log(amtpackinginGunnybagVal);
-  amtpackinginGunnybag.innerText = amtpackinginGunnybagVal;
+  amtpackinginGunnybag.innerText = amtpackinginGunnybagVal.toFixed(2);
   findamtTotalrateofperpees();
   // console.log(amtpackinginGunnybagVal);
 });
